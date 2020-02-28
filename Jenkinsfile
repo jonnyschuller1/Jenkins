@@ -10,6 +10,9 @@ pipeline {
     post {
         success {
             echo 'I succeeeded!'
+            mail to: 'jwaffle17@aol.com',
+                subject: "Succeeded Pipeline: ${currentBuild.fullDisplayName}",
+                body: "Something is right with ${env.Build_URL}"
         }
         unstable {
             echo 'I am unstable :/'
