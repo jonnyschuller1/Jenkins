@@ -8,10 +8,6 @@ pipeline {
         }
     }
     post {
-        always {
-            echo 'One way or another, I have finished'
-            deleteDir() /* clean up our workspace */
-        }
         success {
             echo 'I succeeeded!'
         }
@@ -23,6 +19,10 @@ pipeline {
         }
         changed {
             echo 'Things were different before...'
+        }
+        always {
+            echo 'One way or another, I have finished'
+            deleteDir() /* clean up our workspace */
         }
     }
 }
