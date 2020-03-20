@@ -7,8 +7,8 @@ pipeline {
         stage('Build'){
             steps{
                 echo "Building"
-                sh 'javac OpaqueRequests.java'
-                sh 'jar -cvfm OpaqueRequests.jar Manifest.txt OpaqueRequests.class'
+                sh 'javac Requests/OpaqueRequests.java'
+                sh 'jar -cvfm OpaqueRequests.jar Manifest.txt Requests/OpaqueRequests.class'
             }
         }
         stage('Test'){
