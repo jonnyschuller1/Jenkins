@@ -22,7 +22,7 @@ pipeline {
                     envId: 'Personal Tenant',
                     tagMatchRules: [
                         [
-                            meTypes: [[meType: 'PROCESS_GROUP']],
+                            meTypes: [[meType: 'SERVICE']],
                             tags: [
                                 [context: 'CONTEXTLESS', key: 'JenkinsTest']
                             ]
