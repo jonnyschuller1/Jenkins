@@ -6,6 +6,11 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 private class PublicOrUnmonitoredRequest{
+
+}
+                
+
+public class OpaqueRequests {
         public static void makeRequest(String requestUrl){
                 
                 try {
@@ -26,10 +31,6 @@ private class PublicOrUnmonitoredRequest{
                 }
 
         }
-}
-                
-
-public class OpaqueRequests {
         public static void main (String[] args) {
                 while(true){
                         try {
@@ -41,9 +42,8 @@ public class OpaqueRequests {
                                 prop.load(configis);
 
                                 String requestURL = prop.getProperty("REQUEST_URL");
-                                
-                                PublicOrUnmonitoredRequest pour = new PublicOrUnmonitoredRequest();
-                                pour.makeRequest(requestURL);
+                              
+                                makeRequest(requestURL);
 
                                 TimeUnit.SECONDS.sleep(3);
                         } catch (MalformedURLException ex) {
@@ -58,4 +58,5 @@ public class OpaqueRequests {
                         }
                 }
         }
+
 }
