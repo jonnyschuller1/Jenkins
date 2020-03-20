@@ -18,7 +18,7 @@ pipeline {
         }
         stage('Deploy'){
             steps{
-                createDynatraceDeployementEvent(
+                createDynatraceDeploymentEvent(
                     envId: 'Personal Tenant',
                     tagMatchRules: [
                         [
