@@ -20,10 +20,7 @@ public class OpaqueRequests {
                 } catch (IOException ex) {
                         System.out.println("IOException");
                         System.exit(0);
-                } catch (InterruptedException ex) {
-                        System.out.println("InterruptedException");
-                        System.exit(0);
-                }
+                } 
 
         }
         public static void main (String[] args) {
