@@ -18,11 +18,22 @@ pipeline {
         }
         stage('Deploy'){
             steps{
+                createDynatraceDeployementEvent(
+                    envId: 'Personal Tenant',
+                    tagMatchRules: [
+                        [
+                            meTypes: [[meType: 'PROCESS_GROUP']],
+                            tags: [
+                                [context: 'CONTEXTLESS', key: 'JenkinsTest']
+                            ]
+                        ]
+                    ]) {
                 echo "Deploying"
                 sh 'cp OpaqueRequests.jar /home/ubuntu/'
                 sh 'cp requests.conf /home/ubuntu/'
                 sh "ls"
                 sh 'JENKINS_NODE_COOKIE=dontKillMe /bin/sh request.sh'
+                }
             }
         }
     }
