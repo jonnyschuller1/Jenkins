@@ -14,11 +14,6 @@ pipeline {
                 echo "Testing"
             }
         }
-        stage('Sanity Check'){
-            steps{
-                input "Does it look ok?"
-            }
-        }
         stage('Deploy'){
             steps{
                 echo "Deploying"
