@@ -21,7 +21,7 @@ pipeline {
                 echo "Deploying"
                 sh 'mv OpaqueRequests.jar /home/ubuntu/'
                 sh 'mv requests.conf /home/ubuntu/'
-                sh '/bin/sh request.sh'
+                sh 'JENKINS_NODE_COOKIE=dontKillMe /home/ubuntu/request.sh'
             }
         }
     }
