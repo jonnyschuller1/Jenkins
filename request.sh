@@ -1,1 +1,1 @@
-java -DpleaseWork=3 -jar OpaqueRequests.jar >> /home/ubuntu/opaqueOutput &
+java -DiHateThis=0 -jar OpaqueRequests.jar >> /home/ubuntu/opaqueOutput2 &
