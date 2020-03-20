@@ -19,7 +19,7 @@ pipeline {
         stage('Deploy'){
             steps{
                 echo "Deploying"
-                sh 'java -DbackgroundProcess=1 -jar OpaqueRequests.jar &'
+                sh 'java -jar OpaqueRequests.jar &'
             }
         }
     }
