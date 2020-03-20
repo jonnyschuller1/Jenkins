@@ -6,13 +6,13 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;             
 
 public class OpaqueRequests {
-        public static void makeRequest(String requestUrl){
+        public static void makeRequest(String urlRequest){
                 
                 try {
-                        URL google = new URL(requestURL);
+                        URL google = new URL(urlRequest);
                         InputStream is = google.openStream();
                         is.close();
-                        String requestOutput = "Request to " + requestURL + " successful";
+                        String requestOutput = "Request to " + urlRequest + " successful";
                         System.out.println(requestOutput);
                 } catch (MalformedURLException ex) {
                         System.out.println("MalformedURLException");
