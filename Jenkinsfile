@@ -19,7 +19,7 @@ pipeline {
         stage('Deploy'){
             steps{
                 echo "Deploying"
-                sh 'daemonize -E JENKINS_NODE_COOKIE=OpaqueRequests java -jar OpaqueRequests.jar'
+                sh 'daemonize -E JENKINS_NODE_COOKIE=OpaqueRequests /home/ubuntu/request.sh'
             }
         }
     }
