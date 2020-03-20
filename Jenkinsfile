@@ -24,7 +24,7 @@ pipeline {
                 sh "ls"
                 sh 'export JENKINS_NODE_COOKIE=dontKillMe'
                 sh 'chmod 777 request.sh'
-                sh 'request.sh'
+                sh '/bin/sh request.sh'
             }
         }
     }
