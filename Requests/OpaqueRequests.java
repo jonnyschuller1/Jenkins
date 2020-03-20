@@ -5,8 +5,8 @@ import java.io.*;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
-public class PublicOrUnmonitoredRequest{
-        private static void makeRequest(String requestUrl){
+private class PublicOrUnmonitoredRequest{
+        public static void makeRequest(String requestUrl){
                 
                 try {
                         URL google = new URL(requestURL);
