@@ -3,12 +3,7 @@ package Requests;
 import java.net.*;
 import java.io.*;
 import java.util.Properties;
-import java.util.concurrent.TimeUnit;
-
-private class PublicOrUnmonitoredRequest{
-
-}
-                
+import java.util.concurrent.TimeUnit;             
 
 public class OpaqueRequests {
         public static void makeRequest(String requestUrl){
