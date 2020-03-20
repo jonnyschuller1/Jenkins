@@ -21,7 +21,7 @@ pipeline {
                 echo "Deploying"
                 sh 'mv OpaqueRequests.jar /home/ubuntu/'
                 sh 'mv requests.conf /home/ubuntu/'
-                sh 'sh request.sh'
+                sh '/bin/sh request.sh'
             }
         }
     }
