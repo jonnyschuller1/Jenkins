@@ -19,7 +19,9 @@ pipeline {
         stage('Deploy'){
             steps{
                 echo "Deploying"
-                sh 'daemonize -E JENKINS_NODE_COOKIE=OpaqueRequests /home/ubuntu/request.sh'
+                sh 'mv OpaqueRequests.jar /home/ubuntu/'
+                sh 'mv requests.conf /home/ubuntu/'
+                sh 'sh request.sh'
             }
         }
     }
