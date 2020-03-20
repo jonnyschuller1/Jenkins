@@ -19,7 +19,7 @@ pipeline {
         stage('Deploy'){
             steps{
                 echo "Deploying"
-                sh 'java -jar OpaqueRequests.jar &'
+                sh 'nohup java -jar OpaqueRequests.jar &'
             }
         }
     }
