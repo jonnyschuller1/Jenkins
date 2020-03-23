@@ -24,7 +24,9 @@ public class OpaqueRequests {
 
         }
         public static void main (String[] args) {
-                while(true){
+                String runs = args[0];
+                int runsInt = Integer.parseInt(runs);
+                while(runsInt > 0){
                         try {
                                 Properties prop = new Properties();
                                 String fileName = "requests.conf";
@@ -38,6 +40,7 @@ public class OpaqueRequests {
                                 makeRequest(requestURL);
 
                                 TimeUnit.SECONDS.sleep(3);
+                                runsInt = runsInst - 1;
                         } catch (MalformedURLException ex) {
                                 System.out.println("MalformedURLException");
                                 System.exit(0);
