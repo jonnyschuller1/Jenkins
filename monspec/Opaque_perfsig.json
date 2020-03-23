@@ -4,8 +4,8 @@
     "timeseriesId" : "com.dynatrace.builtin:service.server_side_requests",
     "aggregation" : "count",
     "tags" : "OpaqueRequests",
-    "lowerLimit" : 25,
-    "upperLimit" : 26
+    "lowerLimit" : 5,
+    "upperLimit" : 30
   }
 ]
 }
