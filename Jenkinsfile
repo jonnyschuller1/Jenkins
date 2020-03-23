@@ -9,12 +9,26 @@ pipeline {
                 echo "Building"
                 sh 'javac Requests/OpaqueRequests.java'
                 sh 'jar -cvfm OpaqueRequests.${BUILD_NUMBER}.jar Manifest.txt Requests/OpaqueRequests.class'
-                sh 'java -jar OpaqueRequests.${BUILD_NUMBER}.jar 20'
             }
         }
         stage('Test'){
             steps{
                 echo "Testing"
+                recordDynatraceSession(
+                    envId: 'Personal Tenant',
+                    testCase: 'loadtest',
+                    tagMatchRules: [
+                        [
+                            meTypes: [[meType: 'SERVICE']],
+                            tags: [
+                                [context: 'CONTEXTLESS', key:'OpaqueRequests']
+                            ]
+                        ]
+                    ]) {
+                        sh 'java -jar OpaqueRequests.${BUILD_NUMBER}.jar 20'
+                }
+                
+                perfSigDynatraceReports envId: 'Personal Tenant', nonFunctionalFailure: 1, specFile: "monspec/Opaque_perfsig.json"
             }
         }
         stage('Deploy'){
