@@ -25,7 +25,7 @@ pipeline {
                             ]
                         ]
                     ]) {
-                        sh 'java -jar OpaqueRequests.${BUILD_NUMBER}.jar 140'
+                        sh 'java -jar OpaqueRequests.${BUILD_NUMBER}.jar 100'
                 }
                 
                 perfSigDynatraceReports envId: 'Personal Tenant', nonFunctionalFailure: 1, specFile: "monspec/Opaque_perfsig.json"
