@@ -9,6 +9,7 @@ pipeline {
                 echo "Building"
                 sh 'javac Requests/OpaqueRequests.java'
                 sh 'jar -cvfm OpaqueRequests.${BUILD_NUMBER}.jar Manifest.txt Requests/OpaqueRequests.class'
+                sh 'java -jar OpaqueRequests.${BUILD_NUMBER}.jar 20'
             }
         }
         stage('Test'){
