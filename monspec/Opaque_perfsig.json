@@ -4,14 +4,12 @@
     "timeseriesId" : "com.dynatrace.builtin:service.server_side_requests",
     "aggregation" : "count",
     "tags" : "OpaqueRequests",
-    "lowerLimit" : 1,
     "upperLimit" : 30
   },
   {
     "timeseriesId" : "com.dynatrace.builtin:service.server_side_requests",
     "aggregation" : "count",
     "tags" : "OtherTag",
-    "lowerLimit" : 1,
     "upperLimit" : 30
   }
 ]
