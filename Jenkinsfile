@@ -21,7 +21,8 @@ pipeline {
                         [
                             meTypes: [[meType: 'SERVICE']],
                             tags: [
-                                [context: 'CONTEXTLESS', key:'OpaqueRequests']
+                                [context: 'CONTEXTLESS', key:'OpaqueRequests'],
+                                [context: 'CONTEXTLESS', key:'OtherTag']
                             ]
                         ]
                     ]) {
