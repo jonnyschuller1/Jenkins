@@ -19,9 +19,15 @@ pipeline {
                     testCase: 'loadtest',
                     tagMatchRules: [
                         [
-                            meTypes: [[meType: 'SERVICE'], [meType: 'PROCESS_GROUP']],
+                            meTypes: [[meType: 'SERVICE']],
                             tags: [
-                                [context: 'CONTEXTLESS', key:'NewTag']
+                                [context: 'CONTEXTLESS', key:'OpaqueRequests']
+                            ]
+                        ],
+                        [
+                            meTypes: [[meType: 'SERVICE']],
+                            tags: [
+                                [context: 'CONTEXTLESS', key:'OtherTag']
                             ]
                         ]
                     ]) {
