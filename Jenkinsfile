@@ -33,7 +33,7 @@ pipeline {
                         [
                             meTypes: [[meType: 'PROCESS_GROUP']],
                             tags: [
-                                [context: 'CONTEXTLESS', key: 'NewProcessTag']
+                                [context: 'CONTEXTLESS', key: 'Stupid']
                             ]
                         ]
                     ]) {
