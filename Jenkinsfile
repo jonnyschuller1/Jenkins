@@ -29,6 +29,12 @@ pipeline {
                             tags: [
                                 [context: 'CONTEXTLESS', key:'OtherTag']
                             ]
+                        ],
+                        [
+                            meTypes: [[meType: 'PROCESS_GROUP']],
+                            tags: [
+                                [context: 'CONTEXTLESS', key: 'NewProcessTag']
+                            ]
                         ]
                     ]) {
                         sh 'java -jar OpaqueRequests.${BUILD_NUMBER}.jar 33'
