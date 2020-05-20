@@ -15,7 +15,7 @@ pipeline {
             steps{
                 echo "Testing"
                 recordDynatraceSession(
-                    envId: 'Personal Tenant',
+                    envId: 'Sprint',
                     testCase: 'loadtest',
                     tagMatchRules: [
                         [
@@ -34,7 +34,7 @@ pipeline {
         stage('Deploy'){
             steps{
                 createDynatraceDeploymentEvent(
-                    envId: 'Personal Tenant',
+                    envId: 'Sprint',
                     tagMatchRules: [
                         [
                             meTypes: [[meType: 'SERVICE']],
