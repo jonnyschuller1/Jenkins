@@ -25,7 +25,7 @@ pipeline {
                             ]
                         ]
                     ]) {
-                        sh 'java -jar OpaqueRequests.${BUILD_NUMBER}.jar 1'
+                        sh 'java -jar OpaqueRequests.${BUILD_NUMBER}.jar 50'
                 }
                 
                 perfSigDynatraceReports envId: 'Sprint', nonFunctionalFailure: 1, specFile: "monspec/Opaque_perfsig.json"
