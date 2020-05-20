@@ -25,10 +25,10 @@ pipeline {
                             ]
                         ]
                     ]) {
-                        sh 'java -jar OpaqueRequests.${BUILD_NUMBER}.jar 100'
+                        sh 'java -jar OpaqueRequests.${BUILD_NUMBER}.jar 10'
                 }
                 
-                perfSigDynatraceReports envId: 'Personal Tenant', nonFunctionalFailure: 1, specFile: "monspec/Opaque_perfsig.json"
+                perfSigDynatraceReports envId: 'Sprint', nonFunctionalFailure: 1, specFile: "monspec/Opaque_perfsig.json"
             }
         }
         stage('Deploy'){
