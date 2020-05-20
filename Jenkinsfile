@@ -39,7 +39,7 @@ pipeline {
                         [
                             meTypes: [[meType: 'SERVICE']],
                             tags: [
-                                [context: 'CONTEXTLESS', key: 'JenkinsTest']
+                                [context: 'CONTEXTLESS', key: 'OpaqueRequests']
                             ]
                         ]
                     ]) {
