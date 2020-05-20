@@ -21,12 +21,11 @@ pipeline {
                         [
                             meTypes: [[meType: 'SERVICE']],
                             tags: [
-                                [context: 'CONTEXTLESS', key:'OpaqueRequests'],
-                                [context: 'CONTEXTLESS', key:'OtherTag']
+                                [context: 'CONTEXTLESS', key:'OpaqueRequests']
                             ]
                         ]
                     ]) {
-                        sh 'java -jar OpaqueRequests.${BUILD_NUMBER}.jar 100'
+                        sh 'java -jar OpaqueRequests.${BUILD_NUMBER}.jar 1'
                 }
                 
                 perfSigDynatraceReports envId: 'Sprint', nonFunctionalFailure: 1, specFile: "monspec/Opaque_perfsig.json"
@@ -45,7 +44,7 @@ pipeline {
                         ]
                     ]) {
                 echo "Deploying"
-                sh 'java -jar OpaqueRequests.${BUILD_NUMBER}.jar 10'
+                sh 'java -jar OpaqueRequests.${BUILD_NUMBER}.jar 1'
                 }
             }
         }
