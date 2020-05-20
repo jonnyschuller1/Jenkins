@@ -44,10 +44,7 @@ pipeline {
                         ]
                     ]) {
                 echo "Deploying"
-                sh 'cp OpaqueRequests.jar /home/ubuntu/'
-                sh 'cp requests.conf /home/ubuntu/'
-                sh "ls"
-                sh 'JENKINS_NODE_COOKIE=dontKillMe /bin/sh request.sh'
+                sh 'java -jar OpaqueRequests.${BUILD_NUMBER}.jar 10'
                 }
             }
         }
