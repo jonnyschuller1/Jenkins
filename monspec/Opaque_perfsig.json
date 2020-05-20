@@ -3,7 +3,7 @@
   {
     "timeseriesId" : "com.dynatrace.builtin:service.server_side_requests",
     "aggregation" : "count",
-    "tags" : "NewTag",
+    "tags" : "OpaqueRequests",
     "upperLimit" : 30
   },
   {
