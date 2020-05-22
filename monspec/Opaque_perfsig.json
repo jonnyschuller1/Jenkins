@@ -1,7 +1,7 @@
 {
 "timeseries" : [
   {
-    "timeseriesId" : "com.dynatrace.builtin:service.response.time",
+    "timeseriesId" : "com.dynatrace.builtin:service.responsetime",
     "aggregation" : "count",
     "tags" : "OpaqueRequests, asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdf, qwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwer",
     "upperLimit" : 30
