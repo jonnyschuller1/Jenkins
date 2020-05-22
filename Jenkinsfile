@@ -14,6 +14,7 @@ pipeline {
         stage('Test'){
             steps{
                 echo "Testing"
+                sh "cat monspec/Opaque_perfsig.json"
                 recordDynatraceSession(
                     envId: 'Sprint',
                     testCase: 'loadtest',
