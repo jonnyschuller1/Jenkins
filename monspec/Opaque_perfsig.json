@@ -5,12 +5,6 @@
     "aggregation" : "count",
     "tags" : "OpaqueRequests, asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdf, qwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwer",
     "upperLimit" : 30
-  },
-  {
-    "timeseriesId" : "com.dynatrace.builtin:service.server_side_requests",
-    "aggregation" : "count",
-    "tags" : "OtherTag",
-    "upperLimit" : 30
   }
 ]
 }
