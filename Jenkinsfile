@@ -23,6 +23,11 @@ pipeline {
                             meTypes: [[meType: 'SERVICE']],
                             tags: [
                                 [context: 'CONTEXTLESS', key:'OpaqueRequests']
+                            ],
+                            [
+                            meTypes: [[meType: 'PROCESS_GROUP']],
+                            tags: [
+                                [context: 'CONTEXTLESS', key:'OpaqueRequests']
                             ]
                         ]
                     ]) {
