@@ -3,7 +3,7 @@
   {
     "timeseriesId" : "builtin:service.response.time",
     "aggregation" : "count",
-    "tags" : "OpaqueRequests, asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdf, qwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwer",
+    "tags" : "OpaqueRequests",
     "upperLimit" : 30
   }
 ]
