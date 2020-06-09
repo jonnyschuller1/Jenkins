@@ -29,6 +29,7 @@ pipeline {
                             tags: [
                                 [context: 'CONTEXTLESS', key:'OpaqueRequests']
                             ]
+                            ]
                         ]
                     ]) {
                         sh 'java -jar OpaqueRequests.${BUILD_NUMBER}.jar 30'
