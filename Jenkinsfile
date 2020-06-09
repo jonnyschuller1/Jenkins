@@ -24,18 +24,6 @@ pipeline {
                             tags: [
                                 [context: 'CONTEXTLESS', key:'OpaqueRequests']
                             ]
-                        ],
-                        [
-                            meTypes: [[meType: 'SERVICE']],
-                            tags: [
-                                [context: 'CONTEXTLESS', key:'OtherTag']
-                            ]
-                        ],
-                        [
-                            meTypes: [[meType: 'PROCESS_GROUP']],
-                            tags: [
-                                [context: 'CONTEXTLESS', key: '', value: 'Stupid']
-                            ]
                         ]
                     ]) {
                         sh 'java -jar OpaqueRequests.${BUILD_NUMBER}.jar 30'
