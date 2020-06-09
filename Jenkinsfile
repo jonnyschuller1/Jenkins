@@ -23,16 +23,22 @@ pipeline {
                             meTypes: [[meType: 'SERVICE']],
                             tags: [
                                 [context: 'CONTEXTLESS', key:'OpaqueRequests']
-                            ],
-                            [
+                            ]
+                        ],
+                        [
+                            meTypes: [[meType: 'SERVICE']],
+                            tags: [
+                                [context: 'CONTEXTLESS', key:'OtherTag']
+                            ]
+                        ],
+                        [
                             meTypes: [[meType: 'PROCESS_GROUP']],
                             tags: [
-                                [context: 'CONTEXTLESS', key:'OpaqueRequests']
-                            ]
+                                [context: 'CONTEXTLESS', key: '', value: 'Stupid']
                             ]
                         ]
                     ]) {
-                        sh 'java -jar OpaqueRequests.${BUILD_NUMBER}.jar 30'
+                        sh 'java -jar OpaqueRequests.${BUILD_NUMBER}.jar 100'
                 }
                 
                 perfSigDynatraceReports envId: 'Sprint', nonFunctionalFailure: 1, specFile: "monspec/Opaque_perfsig.json"
