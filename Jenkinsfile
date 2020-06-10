@@ -20,7 +20,7 @@ pipeline {
                     testCase: 'loadtest',
                     tagMatchRules: [
                         [
-                            meTypes:[[meType:'']],
+                            meTypes:[[meType:SERVICE]],
                             tags:[
                                 [context:'CONTEXTLESS', value:'app.jar waybill-integration-bridge-application-dev-*', key:'jenkins-perf-sig']
                             ]
