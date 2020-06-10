@@ -44,7 +44,7 @@ pipeline {
     tags:[
       [
         context:CONTEXTLESS,
-        value:app.jar waybill-integration-datatransformer-application-dev-*,
+        value:'app.jar waybill-integration-datatransformer-application-dev-*',
         key:jenkins-perf-sig
       ]
     ]
@@ -64,7 +64,7 @@ pipeline {
       ],
       [
         context:CONTEXTLESS,
-        value:app.jar waybill-integration-bridge-application-dev-*,
+        value:'app.jar waybill-integration-bridge-application-dev-*',
         key: jenkins-perf-sig
       ]
     ]
@@ -79,12 +79,12 @@ pipeline {
     tags:[
       [
         context:CONTEXTLESS,
-        value:Kafka Consumer Service-dev,
+        value:'Kafka Consumer Service-dev',
         key:jenkins-perf-sig-service
       ],
       [
         context:CONTEXTLESS,
-        value:app.jar waybill-integration-datatransformer-application-dev-*,
+        value:'app.jar waybill-integration-datatransformer-application-dev-*',
         key: jenkins-perf-sig
       ]
     ]
