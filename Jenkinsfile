@@ -20,7 +20,7 @@ pipeline {
                     testCase: 'loadtest',
                     tagMatchRules: [
                         [
-                            meTypes: [[meType: 'null']],
+                            meTypes: [[meType: '']],
                             tags: [
                                 [context: 'CONTEXTLESS', key:'OpaqueRequests']
                             ]
