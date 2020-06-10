@@ -29,7 +29,7 @@ pipeline {
     tags:[
       [
         context:CONTEXTLESS,
-        value:app.jar waybill-integration-bridge-application-dev-*,
+        value:'app.jar waybill-integration-bridge-application-dev-*',
         key:jenkins-perf-sig
       ]
     ]
