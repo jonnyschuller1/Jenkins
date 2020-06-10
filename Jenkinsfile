@@ -18,26 +18,55 @@ pipeline {
                 recordDynatraceSession(
                     envId: 'Sprint',
                     testCase: 'loadtest',
-                    tagMatchRules: [
-                        [
-                            meTypes: [[meType: 'fakeMEType']],
-                            tags: [
-                                [context: 'CONTEXTLESS', key:'OpaqueRequests']
-                            ]
-                        ],
-                        [
-                            meTypes: [[meType: 'SERVICE']],
-                            tags: [
-                                [context: 'CONTEXTLESS', key:'OtherTag']
-                            ]
-                        ],
-                        [
-                            meTypes: [[meType: 'PROCESS_GROUP']],
-                            tags: [
-                                [context: 'CONTEXTLESS', key: '', value: 'Stupid']
-                            ]
-                        ]
-                    ]) {
+                    tagMatchRules:
+                    [
+
+                [meTypes:[[meType:'PROCESS_GROUP']],
+
+                                tags:[
+
+                                                                [context:CONTEXTLESS, value:app.jar waybill-integration-bridge-application-dev-*, key:jenkins-perf-sig]
+
+                                                ]
+
+                ],
+
+                [meTypes:[[meType:'PROCESS_GROUP']],
+
+                                tags:[
+
+                                                                [context:CONTEXTLESS, value:app.jar waybill-integration-datatransformer-application-dev-*, key:jenkins-perf-sig]
+
+                                                ]
+
+                ],
+
+                [meTypes:[[meType:'SERVICE']],
+
+                                tags:[
+
+                                                                [context:CONTEXTLESS, value:EndpointMessageListener, key:jenkins-perf-sig-service],
+
+                                                                [context:CONTEXTLESS, value:app.jar waybill-integration-bridge-application-dev-*, key: jenkins-perf-sig]
+
+                                                ]
+
+                ],
+
+                [meTypes:[[meType:'SERVICE']],
+
+                                tags:[
+
+                                                                [context:CONTEXTLESS, value:Kafka Consumer Service-dev, key:jenkins-perf-sig-service],
+
+                                                                [context:CONTEXTLESS, value:app.jar waybill-integration-datatransformer-application-dev-*, key: jenkins-perf-sig]
+
+                                                ]
+
+                ]
+
+]
+                ) {
                         sh 'java -jar OpaqueRequests.${BUILD_NUMBER}.jar 30'
                 }
                 
