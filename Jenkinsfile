@@ -35,7 +35,7 @@ pipeline {
       [
         context:'CONTEXTLESS',
         value:'app.jar waybill-integration-datatransformer-application-dev-*',
-        key:jenkins-perf-sig
+        key:'jenkins-perf-sig'
       ]
     ]
   ],
