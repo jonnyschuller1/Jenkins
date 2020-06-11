@@ -25,7 +25,6 @@ pipeline {
                             ]
                         ]
                     ]) {
-                        sh 'java -jar OpaqueRequests.${BUILD_NUMBER}.jar 140'
                         sh 'java -jar OpaqueRequests.${BUILD_NUMBER}.jar 100'
                 }
 
