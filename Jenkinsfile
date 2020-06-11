@@ -14,93 +14,41 @@ pipeline {
         stage('Test'){
             steps{
                 echo "Testing"
-                sh "cat monspec/Opaque_perfsig.json"
                 recordDynatraceSession(
-                    envId: 'Sprint',
+                    envId: 'Personal Tenant',
                     testCase: 'loadtest',
                     tagMatchRules: [
                         [
-                            meTypes:[[meType:SERVICE]],
-                            tags:[
-                                [context:'CONTEXTLESS', value:'app.jar waybill-integration-bridge-application-dev-*', key:'jenkins-perf-sig']
+                            meTypes: [[meType: 'SERVICE']],
+                            tags: [
+                                [context: 'CONTEXTLESS', key:'OpaqueRequests']
                             ]
-                        ],
-                          [
-    meTypes:[
-      [
-        meType:'PROCESS_GROUP'
-      ]
-    ],
-    tags:[
-      [
-        context:'CONTEXTLESS',
-        value:'app.jar waybill-integration-datatransformer-application-dev-*',
-        key:'jenkins-perf-sig'
-      ]
-    ]
-  ],
- 
-  [
-    meTypes:[
-      [
-        meType:'SERVICE'
-      ]
-    ],
-    tags:[
-      [
-        context:'CONTEXTLESS',
-        value:'EndpointMessageListener',
-        key:'jenkins-perf-sig-service'
-      ],
-      [
-        context:'CONTEXTLESS',
-        value:'app.jar waybill-integration-bridge-application-dev-*',
-        key: 'jenkins-perf-sig'
-      ]
-    ]
-  ],
- 
-  [
-    meTypes:[
-      [
-        meType:'SERVICE'
-      ]
-    ],
-    tags:[
-      [
-        context:'CONTEXTLESS',
-        value:'Kafka Consumer Service-dev',
-        key:'jenkins-perf-sig-service'
-      ],
-      [
-        context:'CONTEXTLESS',
-        value:'app.jar waybill-integration-datatransformer-application-dev-*',
-        key: 'jenkins-perf-sig'
-      ]
-    ]
-  ]
-
+                        ]
                     ]) {
-                        sh 'java -jar OpaqueRequests.${BUILD_NUMBER}.jar 30'
+                        sh 'java -jar OpaqueRequests.${BUILD_NUMBER}.jar 140'
+                        sh 'java -jar OpaqueRequests.${BUILD_NUMBER}.jar 100'
                 }
-                
-                perfSigDynatraceReports envId: 'Sprint', nonFunctionalFailure: 1, specFile: "monspec/Opaque_perfsig.json"
+
+                perfSigDynatraceReports envId: 'Personal Tenant', nonFunctionalFailure: 1, specFile: "monspec/Opaque_perfsig.json"
             }
         }
         stage('Deploy'){
             steps{
                 createDynatraceDeploymentEvent(
-                    envId: 'Sprint',
+                    envId: 'Personal Tenant',
                     tagMatchRules: [
                         [
                             meTypes: [[meType: 'SERVICE']],
                             tags: [
-                                [context: 'CONTEXTLESS', key: 'OpaqueRequests']
+                                [context: 'CONTEXTLESS', key: 'JenkinsTest']
                             ]
                         ]
                     ]) {
                 echo "Deploying"
-                sh 'java -jar OpaqueRequests.${BUILD_NUMBER}.jar 1'
+                sh 'cp OpaqueRequests.jar /home/ubuntu/'
+                sh 'cp requests.conf /home/ubuntu/'
+                sh "ls"
+                sh 'JENKINS_NODE_COOKIE=dontKillMe /bin/sh request.sh'
                 }
             }
         }
