@@ -3,7 +3,7 @@
   {
     "timeseriesId" : "com.dynatrace.builtin:service.responsetime",
     "aggregation" : "count",
-    "tags" : "OpaqueRequests, asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdf, qwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwerqwer",
+    "tags" : "JenkinsTest"
     "upperLimit" : 30
   }
 ]
