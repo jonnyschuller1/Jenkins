@@ -39,15 +39,12 @@ pipeline {
                         [
                             meTypes: [[meType: 'SERVICE']],
                             tags: [
-                                [context: 'CONTEXTLESS', key: 'JenkinsTest']
+                                [context: 'CONTEXTLESS', key: 'OpaqueRequests']
                             ]
                         ]
                     ]) {
-                echo "Deploying"
-                sh 'cp OpaqueRequests.jar /home/ubuntu/'
-                sh 'cp requests.conf /home/ubuntu/'
-                sh "ls"
-                sh 'JENKINS_NODE_COOKIE=dontKillMe /bin/sh request.sh'
+                    echo "Deploying"
+                    echo 'Deployed OpaqueRequests.${Build_NUMBER}.jar (Not Really)'
                 }
             }
         }
