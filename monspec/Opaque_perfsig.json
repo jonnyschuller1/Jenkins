@@ -1,10 +1,10 @@
 {
 "timeseries" : [
   {
-    "timeseriesId" : "com.dynatrace.builtin:service.responsetime",
+    "timeseriesId" : "com.dynatrace.builtin:service.requests",
     "aggregation" : "count",
     "tags" : "OpaqueRequests",
-    "upperLimit": 30
+    "lowerLimit": 30
   }
 ]
 }
