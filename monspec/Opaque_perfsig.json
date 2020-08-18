@@ -3,8 +3,8 @@
   {
     "timeseriesId" : "com.dynatrace.builtin:service.responsetime",
     "aggregation" : "count",
-    "tags" : "JenkinsTest"
-    "upperLimit" : 30
+    "tags" : "OpaqueRequests"
+    "upperLimit": 30
   }
 ]
 }
