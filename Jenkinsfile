@@ -28,13 +28,13 @@ pipeline {
                         sh 'java -jar OpaqueRequests.${BUILD_NUMBER}.jar 180'
                 }
 
-                perfSigDynatraceReports envId: 'Personal Tenant', nonFunctionalFailure: 1, specFile: "monspec/Opaque_perfsig.json"
+                perfSigDynatraceReports envId: 'Sprint', nonFunctionalFailure: 1, specFile: "monspec/Opaque_perfsig.json"
             }
         }
         stage('Deploy'){
             steps{
                 createDynatraceDeploymentEvent(
-                    envId: 'Personal Tenant',
+                    envId: 'Sprint',
                     tagMatchRules: [
                         [
                             meTypes: [[meType: 'SERVICE']],
