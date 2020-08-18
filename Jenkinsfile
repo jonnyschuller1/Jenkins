@@ -15,7 +15,7 @@ pipeline {
             steps{
                 echo "Testing"
                 recordDynatraceSession(
-                    envId: 'Personal Tenant',
+                    envId: 'Sprint',
                     testCase: 'loadtest',
                     tagMatchRules: [
                         [
@@ -25,7 +25,7 @@ pipeline {
                             ]
                         ]
                     ]) {
-                        sh 'java -jar OpaqueRequests.${BUILD_NUMBER}.jar 200'
+                        sh 'java -jar OpaqueRequests.${BUILD_NUMBER}.jar 180'
                 }
 
                 perfSigDynatraceReports envId: 'Personal Tenant', nonFunctionalFailure: 1, specFile: "monspec/Opaque_perfsig.json"
