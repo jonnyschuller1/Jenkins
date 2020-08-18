@@ -39,7 +39,7 @@ public class OpaqueRequests {
                               
                                 makeRequest(requestURL);
 
-                                TimeUnit.SECONDS.sleep(3);
+                                TimeUnit.SECONDS.sleep(1);
                                 runsInt = runsInt - 1;
                         } catch (MalformedURLException ex) {
                                 System.out.println("MalformedURLException");
