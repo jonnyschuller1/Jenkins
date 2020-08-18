@@ -3,7 +3,7 @@
   {
     "timeseriesId" : "com.dynatrace.builtin:service.responsetime",
     "aggregation" : "count",
-    "tags" : "OpaqueRequests"
+    "tags" : "OpaqueRequests",
     "upperLimit": 30
   }
 ]
