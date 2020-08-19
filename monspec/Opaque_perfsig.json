@@ -17,8 +17,8 @@
     "timeseriesId": "com.dynatrace.builtin:service.responsetime",
     "aggregation": "avg",
     "tags": "MakeRequestService",
-    "upperWarning": 400,
-    "upperSevere": 1000
+    "upperWarning": 1,
+    "upperSevere": 2
    }
 ]
 }
