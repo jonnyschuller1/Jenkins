@@ -18,7 +18,7 @@
     "aggregation": "avg",
     "tags": "MakeRequestService",
     "upperWarning": 1,
-    "upperSevere": 2
+    "upperSevere": 400
    }
 ]
 }
