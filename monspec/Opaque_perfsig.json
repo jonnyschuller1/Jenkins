@@ -7,11 +7,18 @@
     "lowerWarning": 1
   },
   {
-			"timeseriesId": "com.dynatrace.builtin:service.responsetime",
-			"aggregation": "avg",
-			"tags": "OpaqueRequests",
-			"upperWarning": 5000,
-			"upperSevere": 10000
-	}
+    "timeseriesId": "com.dynatrace.builtin:service.responsetime",
+    "aggregation": "avg",
+    "tags": "OpaqueRequests",
+    "upperWarning": 5000,
+    "upperSevere": 10000
+   },
+  {
+    "timeseriesId": "com.dynatrace.builtin:service.responsetime",
+    "aggregation": "avg",
+    "tags": "MakeRequestService",
+    "upperWarning": 1,
+    "upperSevere": 300
+   }
 ]
 }
