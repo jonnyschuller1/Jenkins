@@ -4,7 +4,14 @@
     "timeseriesId" : "com.dynatrace.builtin:service.requests",
     "aggregation" : "count",
     "tags" : "OpaqueRequests",
-    "lowerLimit": 30
-  }
+    "lowerWarning": 1
+  },
+  {
+			"timeseriesId": "com.dynatrace.builtin:service.responsetime",
+			"aggregation": "avg",
+			"tags": "OpaqueRequests",
+			"upperWarning": 5000,
+			"upperSevere": 10000
+	}
 ]
 }
